@@ -1,5 +1,5 @@
 // Reusable BookCard Component
-function BookCard(props) {
+/*function BookCard(props) {
   return (
     <div
       style={{
@@ -54,5 +54,117 @@ export default function Page() {
         />
       ))}
     </div>
+  );
+}
+  */
+
+
+//use state
+//'use client';
+//import { useState } from "react";
+//import React from "react";
+/*
+export default function page(){
+  const [clr, setclr] = useState({color:"blue"});
+  const changecolor=()=>{
+    setclr({color:"red"});
+  }
+  return(
+    <div>
+      <h1 style={clr}>Hello</h1>
+      <button onClick={changecolor}>Change Text</button>
+    </div>
+  )
+}
+  */
+
+
+
+
+  /*export default function Counter() {
+   const [count, setCount] = useState(0);
+
+   const increment = () => setCount(count + 1);
+   const decrement = () => {
+     if (count > 0) setCount(count - 1);
+   };
+   const reset = () => setCount(0);
+
+  return (
+    <div>
+     <h2>Count: {count}</h2>
+     <button onClick={increment}>+</button>
+       <button onClick={decrement}>-</button>
+      <button onClick={reset}>Reset</button>
+    </div>
+  );
+ }
+
+ // ```jsx
+// import { useState } from "react";
+
+// export default function Toggle() {
+//   const [show, setShow] = useState(false);
+
+//   return (
+//     <div>
+//       <button onClick={() => setShow(!show)}>
+//         {show ? "Hide" : "Show"}
+//       </button>
+
+//       {show && <p>This text is visible!</p>}
+//     </div>
+//   );
+// }
+// ```*/
+/*export default function Page() {
+  const [name, setName] = useState("");
+
+  return (
+    <div style={{ padding: "20px" }}>
+      <input
+        type="text"
+        placeholder="Enter your name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <p>Hello, {name}</p>
+    </div>
+  );
+}*/
+/*export default function Page() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div style={{ padding: "20px" }}>
+      <button onClick={() => setCount(count + 1)}>
+        Click Me
+      </button>
+      <p>Clicked: {count} times</p>
+    </div>
+  );
+}*/
+
+
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Section from "./components/Section";
+import MoodList from "./components/MoodList";
+
+const moods = [
+  { date: "2026-02-20", mood: "😄", description: "Feeling happy today!" },
+  { date: "2026-02-19", mood: "😴", description: "Very tired after work." },
+  { date: "2026-02-18", mood: "😎", description: "Chilled and relaxed." },
+];
+
+export default function Page() {
+  return (
+    <>
+      <Header />
+      <Section>
+        <MoodList moods={moods} />
+      </Section>
+      <Footer />
+    </>
   );
 }
